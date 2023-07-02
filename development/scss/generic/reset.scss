@@ -1,0 +1,56 @@
+// Reset stylów
+
+// Resetowanie marginesów, paddingu i obramowania dla wszystkich elementów
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+// Resetowanie stylu czcionki dla elementów nagłówków
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+// Resetowanie listy dla elementów ul i ol
+ul, ol {
+  list-style: none;
+}
+
+// Resetowanie stylu dla linków
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+// Resetowanie stylu dla formularzy
+input, textarea, select, button {
+  appearance: none;
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+// Resetowanie wyglądu przycisków
+button {
+  padding: 0;
+  cursor: pointer;
+}
+
+// Resetowanie stylu dla obrazków
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Resetowanie stylu dla tabel
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+
