@@ -2,7 +2,7 @@
 @use '../settings/fonts';
 @import url('https://fonts.googleapis.com/css?family=Charmonman');
 
-.header-container{
+.header-container {
   max-width: 1440px;
   height: 100px;
   background-color: $header-color;
@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: space-around;
 }
-.header-menu{
+.header-nav{
   display: flex;
   text-align: center;
   justify-content: center;
@@ -21,22 +21,22 @@
   font-size: 16px;
   font-weight: normal;
 }
-  h1{
-    font-family: Charmonman;
-    font-size: 30px;
-  }
-  #first{
-    font-weight:100;
-    color: white;
-  }
-  #second{
-    color:#E58A20;
-    font-weight: 700;
-  }
-  .first-menu-el{
-    color: $screen-head-color;
-    padding-left: 0;
-  }
-  .el{
-    padding: 0px 40px;
-  }
+h1{
+  font-family: Charmonman;
+  font-size: 30px;
+}
+#first{
+  font-weight:100;
+  color: white;
+}
+#second{
+  color:#E58A20;
+  font-weight: 700;
+}
+.first-nav-el{
+  color: $screen-head-color;
+  padding-left: 0;
+}
+.nav-element{
+  padding: 0px 40px;
+}
