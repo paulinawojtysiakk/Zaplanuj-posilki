@@ -1,0 +1,42 @@
+@use '../settings/colors';
+@use '../settings/fonts';
+@import url('https://fonts.googleapis.com/css?family=Charmonman');
+
+.header-container{
+  max-width: 1440px;
+  height: 100px;
+  background-color: $header-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.header-menu{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-transform: uppercase;
+  color: $background-screen-color;
+  font-family: $text-font;
+  font-size: 16px;
+  font-weight: normal;
+}
+  h1{
+    font-family: Charmonman;
+    font-size: 30px;
+  }
+  #first{
+    font-weight:100;
+    color: white;
+  }
+  #second{
+    color:#E58A20;
+    font-weight: 700;
+  }
+  .first-menu-el{
+    color: $screen-head-color;
+    padding-left: 0;
+  }
+  .el{
+    padding: 0px 40px;
+  }
