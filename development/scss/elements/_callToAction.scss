@@ -1,0 +1,30 @@
+.cta {
+  background: $header-color;
+  color: $background-screen-color;
+
+  &_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &_title {
+    width: 773px;
+    padding: 57px 75px;
+
+    &_text {
+      font-size: 25px;
+      padding-bottom: 33px;
+    }
+  }
+
+  &_text {
+    font-size: 16px;
+  }
+
+  &_button {
+    background: $buttons-color;
+    color: $background-screen-color;
+    padding: 20px 69px;
+  }
+}
