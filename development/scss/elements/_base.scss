@@ -1,5 +1,6 @@
 @import "development/scss/settings/fonts";
 @import "development/scss/settings/colors";
+@import "development/scss/elements/header";
 
 * {
   box-sizing: border-box;
@@ -21,7 +22,7 @@ h2 {
 }
 
 .container {
-  width: 1424px;
+  width: 1180px;
   margin: 0 auto;
 }
 
