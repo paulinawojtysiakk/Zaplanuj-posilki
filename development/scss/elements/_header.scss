@@ -1,42 +1,39 @@
-@use '../settings/colors';
-@use '../settings/fonts';
-@import url('https://fonts.googleapis.com/css?family=Charmonman');
-
-.header-container {
-  max-width: 1440px;
-  height: 100px;
+.header {
   background-color: $header-color;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-.header-nav{
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  text-transform: uppercase;
-  color: $background-screen-color;
-  font-family: $text-font;
-  font-size: 16px;
-  font-weight: normal;
-}
-h1{
-  font-family: Charmonman;
-  font-size: 30px;
-}
-#first{
-  font-weight:100;
-  color: white;
-}
-#second{
-  color:#E58A20;
-  font-weight: 700;
-}
-.first-nav-el{
-  color: $screen-head-color;
-  padding-left: 0;
-}
-.nav-element{
-  padding: 0px 40px;
+
+  &_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9.5px 0;
+  }
+
+  &_title {
+    font-family: $logo-font;
+    font-size: 43px;
+    font-weight: 100;
+    color: white;
+
+    span {
+      font-weight: 700;
+      color: $screen-head-color;
+    }
+  }
+
+  &_nav {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px;
+    text-transform: uppercase;
+    color: $background-screen-color;
+    font-family: $text-font;
+    font-size: 16px;
+    font-weight: normal;
+
+    &_element:first-child {
+      color: $screen-head-color;
+    }
+  }
 }
