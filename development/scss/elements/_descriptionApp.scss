@@ -1,0 +1,31 @@
+.dapp {
+  &_container {
+    display: flex;
+    justify-content: space-between;
+    background-color: $background-screen-color;
+  }
+  &_columns {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 80px;
+  }
+  &_icon {
+    font-size: 80px;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 30px;
+  }
+  &_title, &_text {
+    color: $navigation-color;
+    font-size: 34px;
+    text-align: center;
+    width: 307px;
+  }
+  &_text {
+    font-size: 24px;
+    height: 210px;
+  }
+  &_title {
+    height: 80px;
+  }
+}
