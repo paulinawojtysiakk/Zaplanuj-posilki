@@ -1,0 +1,35 @@
+.app {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $header-color;
+  font-size: 28px;
+
+  &_person {
+    display: flex;
+
+    &_icon {
+      font-size: 39px;
+      margin-right: 40px;
+    }
+  }
+
+  &_name {
+    margin-top: 6px;
+    margin-right: 20px;
+    color: $background-screen-color;
+  }
+
+  &_logo {
+    margin-left: 40px;
+    font-family: $logo-font;
+    font-weight: 100;
+    color: white;
+
+    span {
+      font-weight: 700;
+      color: $screen-head-color;
+    }
+  }
+}
