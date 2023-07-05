@@ -1,0 +1,73 @@
+.app_body {
+  display: flex;
+}
+
+.app {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $header-color;
+  font-size: 28px;
+
+  &_person {
+    display: flex;
+
+    &_icon {
+      font-size: 39px;
+      margin-right: 40px;
+    }
+  }
+
+  &_name {
+    margin-top: 6px;
+    margin-right: 20px;
+    color: $background-screen-color;
+  }
+
+  &_logo {
+    margin-left: 35px;
+    font-family: $logo-font;
+    font-weight: 100;
+    color: white;
+
+    span {
+      font-weight: 700;
+      color: $screen-head-color;
+    }
+  }
+  &_menu {
+    height: calc(100vh - 80px);
+    width: 234px;
+    background-color: $navigation-color;
+  }
+}
+
+.app_list_item {
+  color: $background-screen-color;
+  font-size: 20px;
+  padding-bottom: 26px;
+  padding-top: 26px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app_list_item:hover  {
+  border-left: 4px solid $buttons-color;
+}
+
+.app_icon {
+  display: none;
+  padding-right: 15px;
+}
+.app_list_item:hover .app_icon {
+  display: block;
+}
+
+.app_background {
+  background-image: url("/development/images/appImages.png");
+  height: calc(100vh - 80px);
+  width: 100%;
+}
