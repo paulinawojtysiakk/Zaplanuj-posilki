@@ -1,3 +1,7 @@
+.app_body {
+  display: flex;
+}
+
 .app {
   height: 80px;
   display: flex;
@@ -32,13 +36,11 @@
       color: $screen-head-color;
     }
   }
-}
-
-.app_menu {
-  height: calc(100vh - 80px);
-    //border: 3px solid red;
-  width: 234px;
-  background-color: $navigation-color;
+  &_menu {
+    height: calc(100vh - 80px);
+    width: 234px;
+    background-color: $navigation-color;
+  }
 }
 
 .app_list_item {
@@ -47,8 +49,25 @@
   padding-bottom: 26px;
   padding-top: 26px;
   padding-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.app_list_item:hover {
+.app_list_item:hover  {
   border-left: 4px solid $buttons-color;
+}
+
+.app_icon {
+  display: none;
+  padding-right: 15px;
+}
+.app_list_item:hover .app_icon {
+  display: block;
+}
+
+.app_background {
+  background-image: url("/development/images/appImages.png");
+  height: calc(100vh - 80px);
+  width: 100%;
 }
