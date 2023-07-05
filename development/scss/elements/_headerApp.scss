@@ -22,7 +22,7 @@
   }
 
   &_logo {
-    margin-left: 40px;
+    margin-left: 35px;
     font-family: $logo-font;
     font-weight: 100;
     color: white;
@@ -32,4 +32,15 @@
       color: $screen-head-color;
     }
   }
+}
+
+.app_menu {
+  height: calc(100vh - 80px);
+  border: 3px solid red;
+  width: 234px;
+  background-color: $navigation-color;
+}
+
+.app_list_item {
+  color: $background-screen-color;
 }
