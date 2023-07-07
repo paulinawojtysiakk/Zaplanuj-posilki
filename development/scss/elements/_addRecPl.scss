@@ -1,0 +1,45 @@
+
+.app_background_btns{
+  margin: 20px 10px 20px 40px;
+}
+.add_widget {
+  display: inline-block;
+  padding: 10px;
+  margin-right: 20px;
+  background-color: $background-screen-color;
+  border: 1px dotted $message-success-color;
+  cursor: pointer;
+  width: 198px;
+  height: 177px;
+  font-family: $text-font;
+  color: $message-success-color;
+}
+.add_widget_text{
+  font-size: 20px;
+}
+.fa-square-plus{
+  font-size: 80px;
+  color: $message-success-color;
+  padding-bottom: 15px;
+}
+
+/* Stylizacja okna modalnego */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
