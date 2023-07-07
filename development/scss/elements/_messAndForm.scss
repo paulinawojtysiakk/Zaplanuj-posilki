@@ -1,0 +1,13 @@
+.app_icon {
+  display: none;
+  padding-right: 15px;
+}
+.app_list_item.active {
+  border-left: 4px solid $buttons-color;
+}
+.app_list_item.active .app_icon {
+  display:flex;
+
+}
+
+

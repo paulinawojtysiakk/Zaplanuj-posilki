@@ -26,24 +26,33 @@
 <section class="app_body">
     <section class="app_menu">
         <ul class="app_menu_list">
-            <li class="app_list_item">
+            <li class="app_list_item" id="menuBtn1">
                 <p>Pulpit</p><br>
                 <i class="fa-solid fa-chevron-right fa-2xs app_icon" style="color: #ff6900;"></i>
             </li>
-            <li class="app_list_item">
+            <li class="app_list_item" id="menuBtn2">
                 <p>Przepisy</p>
                 <i class="fa-solid fa-chevron-right fa-2xs app_icon" style="color: #ff6900;"></i>
             </li>
-            <li class="app_list_item">
+            <li class="app_list_item" id="menuBtn3">
                 <p>Plany</p>
                 <i class="fa-solid fa-chevron-right fa-2xs app_icon" style="color: #ff6900;"></i>
 
             </li>
         </ul>
     </section>
-    <div class="app_background"></div>
-
+    <div class="app_background ">
+        <section class="pulpit screen" id="screen1">
+            <div>pulpit1</div>
+        </section>
+        <section class="recipe screen" id="screen2">
+            <div>pulpit2</div>
+        </section>
+        <section class="plany screen" id="screen3">
+            <div>pulpit3</div>
+        </section>
+    </div>
 </section>
-<script src="./js/app.js"></script>
+<script src="./js/app.js" type="module"></script>
 </body>
 </html>
