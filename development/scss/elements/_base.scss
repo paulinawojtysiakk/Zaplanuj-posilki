@@ -2,10 +2,6 @@
 @import "development/scss/settings/colors";
 @import "development/scss/elements/header";
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   font-family: $text-font;
   font-size: 14px;

@@ -10,22 +10,26 @@
 
   &_title {
     width: 783px;
-    margin-top: 57px;
+    margin: 47.75px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 
     &_text {
-      font-size: 28px;
+      font-size: 32px;
       padding-bottom: 33px;
     }
   }
 
   &_text {
-    font-size: 22px;
-    margin-bottom: 75px;
+    font-size: 24px;
   }
 
   &_button {
     background: $buttons-color;
     color: $background-screen-color;
-    padding: 20px 69px;
+    padding: 20px 50px;
+    font-size: 20px;
   }
 }

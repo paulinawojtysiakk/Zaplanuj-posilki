@@ -1,17 +1,35 @@
-const carouselSlide = document.querySelector(".carousel_slide");
-const carouselItems = document.querySelectorAll(".carousel_item");
-const carouselPrev = document.querySelector(".carousel_prev");
-const carouselNext = document.querySelector(".carousel_next");
+const slides = Array.from(document.querySelectorAll("li.carousel_item"));
+const prevBtn = document.querySelector(".carousel_prev");
+const nextBtn = document.querySelector(".carousel_next");
 
-let currentIndex = 0;
+let slideIndex = 1;
 
-carouselPrev.addEventListener("click", () => {
-  currentIndex =
-    (currentIndex - 1 + carouselItems.length) % carouselItems.length;
-  carouselSlide.style.transform = `translateX(-${currentIndex * 100}%)`;
-});
+// Pokazanie początkowego slajdu
+showSlide(slideIndex);
 
-carouselNext.addEventListener("click", () => {
-  currentIndex = (currentIndex + 1) % carouselItems.length;
-  carouselSlide.style.transform = `translateX(-${currentIndex * 100}%)`;
-});
+// Przypisanie zdarzeń dla przycisków poprzedni/następny
+prevBtn.addEventListener("click", () => changeSlide(-1));
+nextBtn.addEventListener("click", () => changeSlide(1));
+
+// Funkcja zmieniająca slajd
+function changeSlide(n) {
+  showSlide((slideIndex += n));
+}
+
+// Funkcja pokazująca wybrany slajd
+function showSlide(index) {
+  // Ustalenie poprawnego indeksu slajdu
+  if (index < 0) {
+    slideIndex = slides.length - 1;
+  } else if (index >= slides.length) {
+    slideIndex = 0;
+  }
+
+  // Ukrycie wszystkich slajdów
+  slides.forEach((slide) => {
+    slide.style.display = "none";
+  });
+
+  // Pokazanie wybranego slajdu
+  slides[slideIndex].style.display = "flex";
+}
