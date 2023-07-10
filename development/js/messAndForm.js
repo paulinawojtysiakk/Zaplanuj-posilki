@@ -45,3 +45,21 @@ if (!isButtonClicked) {
         section.style.display = 'none';
     });
 }
+
+
+// Dodawanie imienia z pola tekstowego
+
+const nameOutput = document.getElementById("place_name");
+const nameInput = document.getElementById("input_name");
+const submitButton = document.getElementById("button_name");
+const pulpit = document.getElementById("screen1");
+const recipeScreen = document.getElementById("recipe_screen")
+
+submitButton.addEventListener("click", function (){
+    nameOutput.textContent = nameInput.value;
+});
+
+submitButton.addEventListener("click", function (){
+    pulpit.style.display = "none";
+    recipeScreen.style.display = "block";
+})
