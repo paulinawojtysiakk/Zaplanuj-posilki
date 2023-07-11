@@ -1,104 +1,170 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
     <title>Zaplanuj Jedzonko</title>
-    <link href="https://fonts.googleapis.com" rel="preconnect"/>
-    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-            href="https://fonts.googleapis.com/css2?family=Charmonman&display=swap"
-            rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Charmonman&display=swap"
+      rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <link rel="stylesheet" href="./scss/main.scss"/>
-</head>
-<body>
-<header class="app">
-    <h1 class="app_logo">
+    <link href="./scss/main.scss" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="app">
+      <h1 class="app_logo">
         <a href="index.html">Zaplanuj <span>Jedzonko</span></a>
-    </h1>
-    <div class="app_person">
+      </h1>
+      <div class="app_person">
         <div class="app_name">Imię</div>
-        <i class="fa-regular fa-user app_person_icon" style="color: #ff6600;"></i>
-    </div>
-</header>
-<section class="app_body">
-    <section class="app_menu">
+        <i
+          class="fa-regular fa-user app_person_icon"
+          style="color: #ff6600"
+        ></i>
+      </div>
+    </header>
+    <section class="app_body">
+      <section class="app_menu">
         <ul class="app_menu_list">
-            <li class="app_list_item" id="menuBtn1">
-                <p>Pulpit</p><br>
-                <i class="fa-solid fa-chevron-right fa-2xs app_icon" style="color: #ff6900;"></i>
-            </li>
-            <li class="app_list_item" id="menuBtn2">
-                <p>Przepisy</p>
-                <i class="fa-solid fa-chevron-right fa-2xs app_icon" style="color: #ff6900;"></i>
-            </li>
-            <li class="app_list_item" id="menuBtn3">
-                <p>Plany</p>
-                <i class="fa-solid fa-chevron-right fa-2xs app_icon" style="color: #ff6900;"></i>
-
-            </li>
+          <li class="app_list_item" id="menuBtn1">
+            <p>Pulpit</p>
+            <br />
+            <i
+              class="fa-solid fa-chevron-right fa-2xs app_icon"
+              style="color: #ff6900"
+            ></i>
+          </li>
+          <li class="app_list_item" id="menuBtn2">
+            <p>Przepisy</p>
+            <i
+              class="fa-solid fa-chevron-right fa-2xs app_icon"
+              style="color: #ff6900"
+            ></i>
+          </li>
+          <li class="app_list_item" id="menuBtn3">
+            <p>Plany</p>
+            <i
+              class="fa-solid fa-chevron-right fa-2xs app_icon"
+              style="color: #ff6900"
+            ></i>
+          </li>
         </ul>
-    </section>
-    <div class="app_background ">
+      </section>
+      <div class="app_background">
         <section class="pulpit screen" id="screen1">
-            <div>Pulpit1</div>
-
-        <div class="app_background_btns">
+          <div class="app_background_btns">
             <button class="add_widget" id="addRecipeBtn">
-                <i class="fa-regular fa-square-plus square-plus-icon"></i>
-                </br>
-                <p class="add_widget_text">dodaj przepis</p>
+              <i class="fa-regular fa-square-plus"></i>
+              <br />
+              <p class="add_widget_text">dodaj przepis</p>
             </button>
 
             <button class="add_widget" id="addMealPlanBtn">
-                <i class="fa-regular fa-square-plus square-plus-icon"></i>
-                </br>
-                <p class="add_widget_text">dodaj plan</p>
+              <i class="fa-regular fa-square-plus"></i>
+              <br />
+              <p class="add_widget_text">dodaj plan</p>
             </button>
-        </div>
-            <!-- Okno modalne dla dodawania przepisu -->
+          </div>
 
-            <div id="recipeModal" class="modal">
-                <div class="modal-content">
-                    <h2>Dodaj przepis</h2>
+          <!-- Okno modalne dla dodawania przepisu -->
 
-                    <!-- Tutaj formularz dla przepisu -->
-                    <button onclick="closeModal('recipeModal')">Anuluj</button>
+          <div class="modal" id="recipeModal">
+            <div class="modal_content">
+              <div class="modal_content_action">
+                <h2 class="modal_content_title">Nowy Przepis</h2>
+                <button
+                  class="modal_content_btn close_widget"
+                  id="closeRecipeBtn"
+                >
+                  Zapisz i zamknij
+                </button>
+              </div>
+              <div class="modal_container">
+                <label class="modal_label" for="recipeName">
+                  Nazwa przepisu
+                </label>
+                <input
+                  class="modal_input"
+                  id="recipeName"
+                  placeholder="np. Zapiekanka z ziemniakami i brukselką"
+                  type="text"
+                />
+              </div>
+              <div class="modal_container">
+                <label class="modal_label" for="recipeDescription">
+                  Opis przepisu
+                </label>
+                <textarea
+                  class="modal_input"
+                  id="recipeDescription"
+                  placeholder="np. Mamusina najlepsza zapiekanka pod słońcem. Można ją podać jako główne danie albo jako kolację. W zapiekance możesz użyć również kiełbasy paprykowej sprawi ona, że zapiekanka będzie ostrzejsza w smaku. Zgodnie z zalecanimi Makłowicza, podawać z dobrze dobranym winkiem ;)"
+                  rows="3"
+                ></textarea>
+              </div>
+              <div class="modal_container">
+                <div class="elements">
+                  <h2 class="elements_title">Instrukcje</h2>
+                  <label class="elements_label" for="recipeInstruction">
+                    <textarea
+                      class="modal_input"
+                      id="recipeInstruction"
+                      placeholder="np. Ugotuj ziemniaki"
+                      rows="3"
+                    ></textarea>
+                    <button class="add_element" id="addInstructionBtn">
+                      <i class="fa-solid fa-square-plus element_btn"></i>
+                    </button>
+                  </label>
+                  <ul
+                    class="elements_list instruction_list"
+                    id="instructionList"
+                  ></ul>
                 </div>
-            </div>
-
-            <!-- Okno modalne dla dodawania planu -->
-            <div id="mealPlanModal" class="modal">
-                <div class="modal-content">
-                    <h2>Dodaj plan</h2>
-                    <!-- Tutaj formularz dla planu -->
-                    <button onclick="closeModal('mealPlanModal')">Anuluj</button>
+                <div class="elements">
+                  <h2 class="elements_title">Składniki</h2>
+                  <label class="elements_label" for="recipeIngredients">
+                    <textarea
+                      class="modal_input"
+                      id="recipeIngredients"
+                      placeholder="np. Ugotuj ziemniaki"
+                      rows="2"
+                    ></textarea>
+                    <button class="add_element" id="addIngredientsBtn">
+                      <i class="fa-solid fa-square-plus element_btn"></i>
+                    </button>
+                  </label>
+                  <ul
+                    class="elements_list ingredient_list"
+                    id="ingredientList"
+                  ></ul>
                 </div>
+              </div>
             </div>
+          </div>
 
-
-
-
+          <!-- Okno modalne dla dodawania planu -->
+          <div class="modal" id="mealPlanModal">
+            <div class="modal_content">
+              <div class="modal_content_action">
+                <h2>Dodaj plan</h2>
+                <button class="close_widget" id="closeScheduleBtn">
+                  Anuluj
+                </button>
+              </div>
+            </div>
+          </div>
         </section>
         <section class="recipe screen" id="screen2">
-            <div>pulpit2</div>
+          <div>pulpit2</div>
         </section>
         <section class="plany screen" id="screen3">
-            <div>pulpit3</div>
+          <div>pulpit3</div>
         </section>
-    </div>
-
-
-
-
-
-
-
-</section>
-<script src="./js/app.js" type="module"></script>
-</body>
+      </div>
+    </section>
+    <script src="./js/app.js" type="module"></script>
+  </body>
 </html>
