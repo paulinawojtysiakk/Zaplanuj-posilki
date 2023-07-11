@@ -11,6 +11,7 @@
             href="https://fonts.googleapis.com/css2?family=Charmonman&display=swap"
             rel="stylesheet"
     />
+
     <link rel="stylesheet" href="./scss/main.scss"/>
 </head>
 <body>
@@ -23,6 +24,7 @@
         <i class="fa-regular fa-user app_person_icon" style="color: #ff6600;"></i>
     </div>
 </header>
+<!--menu po lewej stronie-->
 <section class="app_body">
     <section class="app_menu">
         <ul class="app_menu_list">
@@ -42,23 +44,65 @@
         </ul>
     </section>
     <div class="app_background ">
+        <div class="form" id="name_form">
+            <h1 class="form_title">Witaj,</h1>
+            <p class="form_text">wygląda na to, że jesteś tu tutaj<br> pierwszy raz!</p>
+            <input type="text" class="form_input" pattern="[a-zA-Z]{3,}" placeholder="Tutaj wpisz jak masz na imię"
+                   id="input_name">
+            <button class="form_button" id="button_name">Gotowe!</button>
+            <p class="form_text">Podaj nam swoje imię, a my zorganizujemy<br> dla Ciebie naszą aplikację :)</p>
+        </div>
+
         <section class="pulpit screen" id="screen1">
-            <div class="form">
-                <h1 class="form_title">Witaj,</h1>
-                <p class="form_text">wygląda na to, że jesteś tu tutaj<br> pierwszy raz!</p>
-                <input type="text" class="form_input" pattern="[a-zA-Z]{3,}" placeholder="Tutaj wpisz jak masz na imię" id="input_name">
-                <button class="form_button" id="button_name">Gotowe!</button>
-                <p class="form_text">Podaj nam swoje imię, a my zorganizujemy<br> dla Ciebie naszą aplikację :)</p>
+            <div class="container_widgets_notif">
+
+                <div class="app_background_btns">
+                    <button class="add_widget" id="addRecipeBtn">
+                        <i class="fa-regular fa-square-plus square-plus-icon"></i>
+                        </br>
+                        <p class="add_widget_text">dodaj przepis</p>
+                    </button>
+
+                    <button class="add_widget" id="addMealPlanBtn">
+                        <i class="fa-regular fa-square-plus square-plus-icon"></i>
+                        </br>
+                        <p class="add_widget_text">dodaj plan</p>
+                    </button>
+                </div>
+                <!-- Okno modalne dla dodawania przepisu -->
+
+                <div id="recipeModal" class="modal">
+                    <div class="modal-content">
+                        <h2>Dodaj przepis</h2>
+
+                        <!-- Tutaj formularz dla przepisu -->
+                        <button onclick="closeModal('recipeModal')">Anuluj</button>
+                    </div>
+                </div>
+
+                <!-- Okno modalne dla dodawania planu -->
+                <div id="mealPlanModal" class="modal">
+                    <div class="modal-content">
+                        <h2>Dodaj plan</h2>
+                        <!-- Tutaj formularz dla planu -->
+                        <button onclick="closeModal('mealPlanModal')">Anuluj</button>
+                    </div>
+                </div>
+
+
             </div>
         </section>
-        <section class="add_recipe" id="recipe_screen"></section>
-        <section class="recipe screen" id="screen2">
-            <div>pulpit2</div>
-        </section>
-        <section class="plany screen" id="screen3">
-            <div>pulpit3</div>
-        </section>
+
     </div>
+
+
+    <section class="recipe screen" id="screen2">
+        <div>pulpit2</div>
+    </section>
+    <section class="plany screen" id="screen3">
+        <div>pulpit3</div>
+    </section>
+
 </section>
 <script src="./js/app.js" type="module"></script>
 </body>

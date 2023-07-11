@@ -15,11 +15,7 @@ menuBtns.forEach((menuBtn, index) => {
 
         // Pokaż odpowiednią sekcję na podstawie klikniętego przycisku
         sections.forEach((section, sectionIndex) => {
-            if (index === sectionIndex) {
-                section.style.display = 'block';
-            } else {
-                section.style.display = 'none';
-            }
+            section.style.display = index === sectionIndex ? 'block' : 'none';
         });
 
         isButtonClicked = true;
@@ -46,20 +42,32 @@ if (!isButtonClicked) {
     });
 }
 
-
 // Dodawanie imienia z pola tekstowego
+const nameOutput = document.getElementById('place_name');
+const nameInput = document.getElementById('input_name');
+const submitButton = document.getElementById('button_name');
+const nameForm = document.getElementById('name_form');
+const recipeScreen = document.getElementById('recipe_screen');
 
-const nameOutput = document.getElementById("place_name");
-const nameInput = document.getElementById("input_name");
-const submitButton = document.getElementById("button_name");
-const pulpit = document.getElementById("screen1");
-const recipeScreen = document.getElementById("recipe_screen")
+submitButton.addEventListener('click', function () {
+    const inputValue = nameInput.value.trim();
 
-submitButton.addEventListener("click", function (){
-    nameOutput.textContent = nameInput.value;
+    if (inputValue !== '') {
+        // Zapisz imię w LocalStorage
+        localStorage.setItem('name', inputValue);
+
+        nameOutput.textContent = inputValue;
+        nameForm.style.display = 'none';
+        recipeScreen.style.display = 'block';
+    } else {
+        alert('Wprowadź imię do pola tekstowego');
+    }
 });
 
-submitButton.addEventListener("click", function (){
-    pulpit.style.display = "none";
-    recipeScreen.style.display = "block";
-})
+// Sprawdź, czy imię istnieje w LocalStorage
+const savedName = localStorage.getItem('name');
+if (savedName) {
+    nameOutput.textContent = savedName;
+    nameForm.style.display = 'none';
+    recipeScreen.style.display = 'block';
+}
