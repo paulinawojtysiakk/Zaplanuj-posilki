@@ -52,32 +52,60 @@ const ingredientListContainer = document.getElementById("ingredientList");
 
 // Obsługa kliknięcia przycisku "Dodaj instrukcję"
 addInstructionBtn.addEventListener("click", function () {
-  const instruction = recipeInstructionInput.value; // Pobranie wartości z pola tekstowego
+  const instruction = recipeInstructionInput.value.trim();
 
-  if (instruction.trim() !== "") {
-    // Sprawdzenie, czy pole tekstowe nie jest puste
+  if (instruction !== "") {
+    const listItem = createListItem(instruction);
+    instructionListContainer.appendChild(listItem);
 
-    const listItem = document.createElement("li"); // Tworzenie nowego elementu <li>
-    listItem.textContent = instruction; // Ustawienie tekstu elementu <li>
-
-    instructionListContainer.appendChild(listItem); // Dodanie elementu <li> do kontenera listy
-
-    recipeInstructionInput.value = ""; // Wyczyszczenie pola tekstowego
+    recipeInstructionInput.value = "";
   }
 });
 
 // Obsługa kliknięcia przycisku "Dodaj składnik"
 addIngredientsBtn.addEventListener("click", function () {
-  const ingredient = recipeIngredientsInput.value; // Pobranie wartości z pola tekstowego
+  const ingredient = recipeIngredientsInput.value.trim();
 
-  if (ingredient.trim() !== "") {
-    // Sprawdzenie, czy pole tekstowe nie jest puste
+  if (ingredient !== "") {
+    const listItem = createListItem(ingredient);
+    ingredientListContainer.appendChild(listItem);
 
-    const listItem = document.createElement("li"); // Tworzenie nowego elementu <li>
-    listItem.textContent = ingredient; // Ustawienie tekstu elementu <li>
-
-    ingredientListContainer.appendChild(listItem); // Dodanie elementu <li> do kontenera listy
-
-    recipeIngredientsInput.value = ""; // Wyczyszczenie pola tekstowego
+    recipeIngredientsInput.value = "";
   }
 });
+
+// Funkcja tworząca element listy z przyciskami edycji i usuwania
+function createListItem(text) {
+  const listItem = document.createElement("li");
+
+  const p = document.createElement("p");
+  p.textContent = text;
+  listItem.appendChild(p);
+
+  const editButton = document.createElement("button");
+  editButton.innerHTML = '<i class="fa-solid fa-pencil element_btn"></i>';
+  editButton.classList.add("edit_element");
+  editButton.addEventListener("click", function () {
+    const textarea = document.createElement("textarea");
+    textarea.value = p.textContent;
+    textarea.classList.add("edit_element_textarea");
+    listItem.replaceChild(textarea, p);
+    textarea.focus();
+
+    textarea.addEventListener("blur", function () {
+      p.textContent = textarea.value;
+      listItem.replaceChild(p, textarea);
+    });
+  });
+  listItem.appendChild(editButton);
+
+  const deleteButton = document.createElement("button");
+  deleteButton.innerHTML = '<i class="fa-solid fa-trash element_btn"></i>';
+  deleteButton.classList.add("delete_element");
+  deleteButton.addEventListener("click", function () {
+    listItem.remove();
+  });
+  listItem.appendChild(deleteButton);
+
+  return listItem;
+}
