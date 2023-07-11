@@ -1,9 +1,10 @@
-.container_widgets_notif{
+.container_widgets_notif {
   display: flex;
 }
 
 .app_background_btns {
-  margin: 29px 47px 33px 47px;
+  display: flex;
+  margin: 29px 0 33px 47px;
 }
 
 .add_widget {
@@ -122,10 +123,6 @@
   }
 }
 
-.hide {
-  display: none;
-}
-
 //--------------------------------------------style dla tabeli
 
 .elements {
@@ -146,7 +143,7 @@
   }
 
   &::-webkit-scrollbar-track {
-    background: #f6f6f6;
+    background: red;
   }
 
   &::-webkit-scrollbar-thumb {
@@ -164,6 +161,7 @@
     counter-increment: instruction-counter;
     margin-bottom: 10px;
     display: flex;
+
     &:before {
       content: counter(instruction-counter) ".";
       font-weight: bold;
@@ -175,6 +173,7 @@
 .ingredient_list {
   li {
     margin-bottom: 10px;
+
     &:before {
       content: "•";
       font-size: 20px;

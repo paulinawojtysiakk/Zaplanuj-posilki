@@ -1,10 +1,9 @@
 
-
 .notifications {
-  margin: 20px;
+  margin: 29px 47px 0 0;
+  width: 100%;
 
   &_box {
-    width: 633px;
     height: 51px;
     background-color: white;
     padding-top: 10px;
@@ -22,29 +21,34 @@
     text-align: center;
     color: $message-info-color;
   }
+
   .box2 {
     border: 3px dashed rgb(255, 176, 59);
     margin-bottom: 10px;
     color: rgb(255, 176, 59);
   }
+
   .box3 {
     border: 3px dashed $message-success-color;
     color: $message-success-color;
   }
 
-  &_btn{
+  &_btn {
     padding-right: 20px;
-    transform:  translateY(-15px);
+    transform: translateY(-15px);
   }
-  .fa-circle-info{
+
+  .fa-circle-info {
     font-size: 25px;
     padding-right: 10px;
   }
-  .fa-circle-exclamation{
+
+  .fa-circle-exclamation {
     font-size: 25px;
     padding-right: 10px;
   }
-  .fa-circle-check{
+
+  .fa-circle-check {
     font-size: 25px;
     padding-right: 10px;
   }

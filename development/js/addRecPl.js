@@ -2,16 +2,20 @@
 function openModal(modalId) {
   const modal = document.getElementById(modalId);
   const appBackgroundBtns = document.querySelector(".app_background_btns");
+  const notifications = document.querySelector(".notifications");
   modal.style.display = "block";
-  appBackgroundBtns.classList.add("hide");
+  appBackgroundBtns.style.display = "none";
+  notifications.style.display = "none";
 }
 
 // Funkcja zamykająca okno modalne
 function closeModal(modalId) {
   const modal = document.getElementById(modalId);
   const appBackgroundBtns = document.querySelector(".app_background_btns");
+  const notifications = document.querySelector(".notifications");
   modal.style.display = "none";
-  appBackgroundBtns.classList.remove("hide");
+  appBackgroundBtns.style.display = "flex";
+  notifications.style.display = "block";
 }
 
 // Nasłuchiwacze kliknięcia przycisków
