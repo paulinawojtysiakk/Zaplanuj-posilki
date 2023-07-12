@@ -12,7 +12,7 @@
   padding: 10px;
   margin-right: 20px;
   background-color: $background-screen-color;
-  border: 1px dotted $message-success-color;
+  border: 1px dashed $message-success-color;
   cursor: pointer;
   width: 198px;
   height: 177px;
@@ -76,7 +76,7 @@
   &_container {
     display: flex;
     justify-content: space-between;
-    margin: 0 74px 15px 8px;
+    margin: 0 74px 37px 8px;
 
     .elements {
       width: 100%;
@@ -133,8 +133,8 @@
 }
 
 .elements_list {
-  max-height: 300px;
-  height: 100%;
+  max-height: 350px;
+  height: calc(100vh - 590px);
   overflow-y: auto;
   font-size: 16px;
 
