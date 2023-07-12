@@ -3,9 +3,11 @@ function openModal(modalId) {
   const modal = document.getElementById(modalId);
   const appBackgroundBtns = document.querySelector(".app_background_btns");
   const notifications = document.querySelector(".notifications");
+  const tableWeek = document.querySelector(".table_container");
   modal.style.display = "block";
   appBackgroundBtns.style.display = "none";
   notifications.style.display = "none";
+  tableWeek.style.display = "none";
 }
 
 // Funkcja zamykająca okno modalne
@@ -13,9 +15,11 @@ function closeModal(modalId) {
   const modal = document.getElementById(modalId);
   const appBackgroundBtns = document.querySelector(".app_background_btns");
   const notifications = document.querySelector(".notifications");
+  const tableWeek = document.querySelector(".table_container");
   modal.style.display = "none";
   appBackgroundBtns.style.display = "flex";
   notifications.style.display = "block";
+  tableWeek.style.display = "block";
 }
 
 // Nasłuchiwacze kliknięcia przycisków
