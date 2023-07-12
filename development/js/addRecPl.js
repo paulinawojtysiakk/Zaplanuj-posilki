@@ -81,35 +81,48 @@ addIngredientsBtn.addEventListener("click", function () {
 // Funkcja tworząca element listy z przyciskami edycji i usuwania
 function createListItem(text) {
   const listItem = document.createElement("li");
+  listItem.classList.add("list_item");
 
-  const p = document.createElement("p");
-  p.textContent = text;
-  listItem.appendChild(p);
+  listItem.appendChild(document.createTextNode(text));
 
   const editButton = document.createElement("button");
-  editButton.innerHTML = '<i class="fa-solid fa-pencil element_btn"></i>';
+  editButton.innerHTML =
+    '<i class="fa-regular fa-pen-to-square" style="color: #ffb33b;"></i>';
   editButton.classList.add("edit_element");
   editButton.addEventListener("click", function () {
     const textarea = document.createElement("textarea");
-    textarea.value = p.textContent;
+    textarea.value = text;
     textarea.classList.add("edit_element_textarea");
-    listItem.replaceChild(textarea, p);
-    textarea.focus();
+    listItem.textContent = ""; // Usuwamy dotychczasową treść elementu <li>
+    listItem.appendChild(textarea);
 
-    textarea.addEventListener("blur", function () {
-      p.textContent = textarea.value;
-      listItem.replaceChild(p, textarea);
+    const saveButton = document.createElement("button");
+    saveButton.innerHTML =
+      '<i class="fa-solid fa-check" style="position: absolute;top: 0;right: 0;color: #468966;"></i>';
+    saveButton.classList.add("save_element");
+    saveButton.addEventListener("click", function () {
+      text = textarea.value;
+      listItem.textContent = text;
+      listItem.appendChild(editButton); // Dodajemy przycisk edycji po zapisaniu zmian
+      listItem.appendChild(deleteButton); // Dodajemy przycisk usuwania po zapisaniu zmian
     });
-  });
-  listItem.appendChild(editButton);
 
+    listItem.appendChild(saveButton);
+    textarea.focus();
+  });
+
+  listItem.appendChild(editButton);
   const deleteButton = document.createElement("button");
-  deleteButton.innerHTML = '<i class="fa-solid fa-trash element_btn"></i>';
+  deleteButton.innerHTML =
+    '<i class="fa-regular fa-trash-can" style="color: #bd4932;"></i>';
   deleteButton.classList.add("delete_element");
   deleteButton.addEventListener("click", function () {
     listItem.remove();
   });
+
   listItem.appendChild(deleteButton);
 
   return listItem;
 }
+
+//--------------------------------- localStorage

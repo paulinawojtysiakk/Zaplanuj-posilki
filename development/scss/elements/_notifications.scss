@@ -1,6 +1,6 @@
 
 .notifications {
-  margin: 29px 47px 0 0;
+  margin: 29px 47px 0 55px;
   width: 100%;
 
   &_box {
@@ -16,20 +16,20 @@
 
 
   .box1 {
-    border: 3px dashed $message-info-color;
+    border: 1px dashed $message-info-color;
     margin-bottom: 10px;
     text-align: center;
     color: $message-info-color;
   }
 
   .box2 {
-    border: 3px dashed rgb(255, 176, 59);
+    border: 1px dashed rgb(255, 176, 59);
     margin-bottom: 10px;
     color: rgb(255, 176, 59);
   }
 
   .box3 {
-    border: 3px dashed $message-success-color;
+    border: 1px dashed $message-success-color;
     color: $message-success-color;
   }
 
@@ -53,6 +53,9 @@
     padding-right: 10px;
   }
 
+  .fa-rectangle-xmark {
+    font-size: 20px;
+  }
 }
 
 
