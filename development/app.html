@@ -79,6 +79,7 @@
         <section class="add_recipe" id="recipe_screen"></section>
         <section class="pulpit screen" id="screen1">
           <div class="container_widgets_notif">
+            <div class="btn-notif-container">
             <div class="app_background_btns">
               <button class="add_widget" id="addRecipeBtn">
                 <i class="fa-regular fa-square-plus square-plus-icon"></i>
@@ -139,6 +140,7 @@
                   ></i>
                 </button>
               </div>
+            </div>
             </div>
 
             <!-- Okno modalne dla dodawania przepisu -->
@@ -214,17 +216,29 @@
               </div>
             </div>
 
-            <!-- Okno modalne dla dodawania planu -->
-            <div class="modal" id="mealPlanModal">
+             <!-- Okno modalne dla dodawania planu -->
+             <div class="modal" id="mealPlanModal">
               <div class="modal_content">
-                <div class="modal_content_action">
-                  <h2>Dodaj plan</h2>
-                  <button class="close_widget" id="closeScheduleBtn">
-                    Anuluj
-                  </button>
-                </div>
+                  <div class="modal_content_action">
+                      <h1 class="modal_content_title">NOWY PLAN</h1>
+                      <button class="close_widget modal_content_btn" id="closeScheduleBtn">
+                          Zapisz i zamknij
+                      </button>
+                  </div>
+                  <div class="plan_sections">
+                      <h1 class="plan_title">Nazwa Planu</h1>
+                      <input type="text" class="plan_input "
+                             placeholder="Plan jarski na bezmięsny tydzień">
+                  </div>
+                  <div class="plan_sections">
+                      <h1 class="plan_title ">Opis Planu</h1>
+                      <textarea class="plan_input plan_input_description"  placeholder="Pojęcie kuchnia wegetariańska określa pożywienie, które ani nie zawiera mięsa, ani nie zostało przygotowane na bazie pochodzącej z mięsa (np. na rosole drobiowym). Laktoowowegetarianie (najczęściej spotykany typ wegetarian w zachodnim świecie) spożywają nabiał, laktowegetarianie wykluczają jaja, ale nie inne produkty nabiałowe."></textarea>
+                  </div>
+                  <div class="plan_sections">
+                      <h1 class="plan_title">Numer tygodnia</h1>
+                      <input type="text" class="plan_input plan_input_number" placeholder="5">
+                  </div>
               </div>
-            </div>
           </div>
 
           <!-- Wyświetlanie plany tygodnia -->

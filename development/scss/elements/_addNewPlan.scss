@@ -1,0 +1,33 @@
+
+.plan {
+    &_sections {
+      display: flex;
+      margin: 20px 10px;
+    }
+  
+    &_title {
+    margin: auto;
+      width: 200px;
+      font-size: 24px;
+      color: $navigation-color;
+    }
+  
+    &_input {
+      border: 1px solid $extended-icon-color;
+      font-size: 14px;
+      padding: 0 10px;
+      text-align: left;
+      width: 100%;
+  
+    &_description {
+      height: 80px;
+      width: 100%;
+      font-size: 14px;
+  
+    }
+      &_number {
+      min-width: 40px;
+    }
+    }
+  
+  }

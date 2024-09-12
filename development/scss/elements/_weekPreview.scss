@@ -13,8 +13,7 @@
 
   th {
     text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 20px 0;
     border-bottom: 1px solid rgb(161, 161, 148);
   }
 
@@ -57,10 +56,12 @@
 
   .table_btn_right {
     text-align: right;
+    padding: 0 25px;
   }
 
   .table_btn_left {
     text-align: left;
+    padding: 0 25px;
   }
 
   .fa-angles-left {
