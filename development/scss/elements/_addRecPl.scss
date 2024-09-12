@@ -94,6 +94,7 @@
         display: flex;
         align-items: start;
         font-size: 24px;
+        margin-top: 20px;
       }
 
       .element_btn {
@@ -169,13 +170,12 @@
   li {
     counter-increment: instruction-counter;
     margin-bottom: 10px;
-    padding-right: 5px;
     display: flex;
+    gap: 10;
 
     &:before {
       content: counter(instruction-counter) ".";
       font-weight: bold;
-      margin-right: 10px;
     }
   }
 }
@@ -184,7 +184,8 @@
   li {
     display: flex;
     margin-bottom: 10px;
-    margin-right: 5px;
+    gap: 10;
+
 
     &:before {
       content: "•";
