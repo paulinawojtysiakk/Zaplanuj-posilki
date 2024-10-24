@@ -130,3 +130,151 @@ function createListItem(text) {
 }
 
 //--------------------------------- localStorage
+
+// --------------------------------- Recipe Logic
+
+// Elements for Recipe Modal
+const recipeModal = document.getElementById("recipeModal");
+const recipeNameInput = document.getElementById("recipeName");
+const recipeDescriptionInput = document.getElementById("recipeDescription");
+const closeRecipeBtn = document.getElementById("closeRecipeBtn");
+
+// Save Recipe and close modal
+closeRecipeBtn.addEventListener("click", function () {
+  saveRecipe(); // Save the recipe when closing the modal
+  closeModal("recipeModal");
+});
+
+// Function to Save Recipe
+function saveRecipe() {
+  const recipeName = recipeNameInput.value.trim();
+  const recipeDescription = recipeDescriptionInput.value.trim();
+  const instructions = [];
+  const ingredients = [];
+
+  // Get all instruction items
+  const instructionItems = instructionListContainer.querySelectorAll("li");
+  instructionItems.forEach((item) =>
+    instructions.push(item.textContent.trim())
+  );
+
+  // Get all ingredient items
+  const ingredientItems = ingredientListContainer.querySelectorAll("li");
+  ingredientItems.forEach((item) => ingredients.push(item.textContent.trim()));
+
+  if (
+    recipeName &&
+    recipeDescription &&
+    instructions.length &&
+    ingredients.length
+  ) {
+    // Create a recipe object
+    const recipe = {
+      name: recipeName,
+      description: recipeDescription,
+      instructions: instructions,
+      ingredients: ingredients,
+    };
+
+    // Save the recipe to localStorage
+    saveRecipeToLocalStorage(recipe);
+
+    // Clear the form
+    clearRecipeForm();
+  } else {
+    alert("Uzupełnij wszystkie pola aby zapisać przepis.");
+  }
+}
+
+// Save the recipe data to localStorage
+function saveRecipeToLocalStorage(recipe) {
+  let recipes = JSON.parse(localStorage.getItem("recipes")) || [];
+  recipes.push(recipe);
+  localStorage.setItem("recipes", JSON.stringify(recipes));
+}
+
+// Clear the recipe form after saving
+function clearRecipeForm() {
+  recipeNameInput.value = "";
+  recipeDescriptionInput.value = "";
+  instructionListContainer.innerHTML = "";
+  ingredientListContainer.innerHTML = "";
+}
+
+// ----------------------------- Modal Logic for Meal Plan
+const mealPlanModal = document.getElementById("mealPlanModal");
+const mealPlanNameInput = document.querySelector(".plan_input");
+const mealPlanDescriptionInput = document.querySelector(
+  ".plan_input_description"
+);
+const mealPlanWeekInput = document.querySelector(".plan_input_number");
+const closeScheduleBtn = document.getElementById("closeScheduleBtn");
+
+// Save Meal Plan and close modal
+closeScheduleBtn.addEventListener("click", function () {
+  saveMealPlan();
+  closeModal("mealPlanModal");
+});
+
+function saveMealPlan() {
+  const mealPlanName = mealPlanNameInput.value.trim();
+  const mealPlanDescription = mealPlanDescriptionInput.value.trim();
+  const mealPlanWeekNumber = mealPlanWeekInput.value.trim();
+
+  if (mealPlanName && mealPlanDescription && mealPlanWeekNumber) {
+    // Create a meal plan object
+    const mealPlan = {
+      name: mealPlanName,
+      description: mealPlanDescription,
+      weekNumber: mealPlanWeekNumber,
+    };
+
+    saveMealPlanToLocalStorage(mealPlan);
+
+    clearMealPlanForm();
+
+    // Optionally, display the saved plans after adding a new one
+    displaySavedMealPlans();
+  } else {
+    alert("Wypełnij wszystkie pola aby zapisać plan.");
+  }
+}
+
+function saveMealPlanToLocalStorage(mealPlan) {
+  let mealPlans = JSON.parse(localStorage.getItem("mealPlans")) || [];
+  mealPlans.push(mealPlan);
+  localStorage.setItem("mealPlans", JSON.stringify(mealPlans));
+}
+
+function clearMealPlanForm() {
+  mealPlanNameInput.value = "";
+  mealPlanDescriptionInput.value = "";
+  mealPlanWeekInput.value = "";
+}
+
+function displaySavedMealPlans() {
+  const mealPlans = JSON.parse(localStorage.getItem("mealPlans")) || [];
+  const mealPlanContainer = document.getElementById("mealPlanContainer");
+
+  // Clear existing displayed plans before adding new ones
+  mealPlanContainer.innerHTML = "";
+
+  mealPlans.forEach((plan, index) => {
+    const planElement = document.createElement("div");
+    planElement.classList.add("meal-plan");
+
+    // Create the content for each plan
+    planElement.innerHTML = `
+      <h2>Plan ${index + 1}: ${plan.name}</h2>
+      <p>Opis: ${plan.description}</p>
+      <p>Tydzień: ${plan.weekNumber}</p>
+    `;
+
+    mealPlanContainer.appendChild(planElement);
+  });
+}
+
+// Initial call to display saved plans when the page loads
+document.addEventListener("DOMContentLoaded", function () {
+  displaySavedMealPlans();
+});
