@@ -31,3 +31,83 @@
     }
   
   }
+
+
+/* Displaying 
+
+  /* Container for meal plans */
+#mealPlanContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Individual meal plan card styling */
+.meal-plan {
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Hover effect for meal plan cards */
+.meal-plan:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Plan title styling */
+.meal-plan h2 {
+  font-size: 24px;
+  color: #ff6f61; 
+  margin-bottom: 10px;
+}
+
+.meal-plan p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  #mealPlanContainer {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 15px;
+    max-width: fit-content;
+    padding: 15px;
+  }
+
+  .meal-plan {
+    padding: 15px;
+  }
+
+  .meal-plan h2 {
+    font-size: 22px;
+  }
+
+  .meal-plan p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  #mealPlanContainer {
+    grid-template-columns: 1fr; 
+    max-width: fit-content;
+    gap: 10px;
+  }
+
+  .meal-plan {
+    padding: 10px;
+  }
+
+  .meal-plan h2 {
+    font-size: 20px;
+  }
+
+  .meal-plan p {
+    font-size: 14px;
+  }
+}
