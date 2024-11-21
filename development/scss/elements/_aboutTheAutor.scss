@@ -1,15 +1,16 @@
 .abta {
   &_columns {
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    color: #4a4a49;
   }
   &_columns:first-of-type {
     width: 337px;
-    height: 353px;
-    background-color: #5B605F;
+    height: 337px;
   }
   &_columns:last-of-type {
     width: 688px;
+
   }
   &_container {
     display: flex;
@@ -20,6 +21,16 @@
     padding-bottom: 20px;
   }
   &_text {
-    font-size: 24px;
+    font-size: 20px;
+    padding: 10px 0;
+    text-align: justify;
+  }
+  &_list{
+    font-size: 20px;
+    list-style: disc;
+
+    &_item{
+      margin: 15px;
+    }
   }
 }

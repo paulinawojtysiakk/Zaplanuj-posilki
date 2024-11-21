@@ -6,11 +6,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 60px;
   }
 
   &_title {
     width: 783px;
-    margin: 47.75px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,5 +31,6 @@
     color: $background-screen-color;
     padding: 20px 50px;
     font-size: 20px;
+    border-radius: 5px;
   }
 }
