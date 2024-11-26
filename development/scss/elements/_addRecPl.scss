@@ -49,7 +49,6 @@
   &_content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     margin: 29px 47px 33px;
     padding: 0 35px;
     border: 1px dashed $column-text-color;
@@ -60,7 +59,9 @@
       display: flex;
       justify-content: space-between;
       border-bottom: 2px solid $column-text-color;
-      margin-bottom: 9px;
+      padding-top: 10px;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     &_title {
@@ -108,8 +109,9 @@
 
       &_title {
         text-transform: uppercase;
+        padding-bottom: 20px;
         border-bottom: 2px solid $column-text-color;
-        margin-bottom: 10px;
+        margin: 30px 0;
       }
     }
   }
@@ -118,6 +120,7 @@
     display: inline-block;
     width: 174px;
     margin-right: 17px;
+    padding: 5px 0;
     font-size: 24px;
   }
 
@@ -128,6 +131,7 @@
     display: inline-block;
     flex: 1;
     min-height: 50px;
+    padding: 5px 10px;
     border: 1px solid $column-text-color;
     background-color: white;
     color: $column-text-color;
