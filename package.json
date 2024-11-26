@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/CodersLab-core/FER_SCRUM_LAB#readme",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.6.0",
+    "@parcel/transformer-sass": "^2.13.2",
     "parcel": "^2.13.2"
   }
 }
