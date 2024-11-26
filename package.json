@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Front-End ScrumLab",
   "scripts": {
-    "start": "parcel development/index.html"
+    "start": "parcel development/index.html",
+    "build": "parcel build development/index.html --public-url ./"
+
   },
   "repository": {
     "type": "git",
