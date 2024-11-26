@@ -47,6 +47,9 @@
   color: $column-text-color;
 
   &_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 29px 47px 33px;
     padding: 0 35px;
     border: 1px dashed $column-text-color;
@@ -100,6 +103,7 @@
       .element_btn {
         font-size: 27px;
         padding-left: 4px;
+        border-radius: 5px;
       }
 
       &_title {
@@ -123,6 +127,7 @@
     line-height: 1.5;
     display: inline-block;
     flex: 1;
+    min-height: 50px;
     border: 1px solid $column-text-color;
     background-color: white;
     color: $column-text-color;
